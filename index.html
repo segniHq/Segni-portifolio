@@ -1,130 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segni Lemi - Digital Media Specialist</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+  <style>
+    :root {
+      --bg: #030305;
+      --card-bg: #0d0d12;
+      --accent: #9333ea;
+      --accent-gradient: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
+      --text: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --border: #1e1e24;
+    }
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f0f2f5;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-        .login-box {
-            width: 350px;
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 0 1.25rem 6rem;
+      line-height: 1.6;
+    }
 
-        .login-box h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #222;
-        }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        .input-box {
-            margin-bottom: 18px;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
 
-        .input-box label {
-            display: block;
-            margin-bottom: 7px;
-            color: #444;
-        }
+    .nav-logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .input-box input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            outline: none;
-            font-size: 15px;
-        }
+    .hero {
+      text-align: center;
+      padding: 3rem 0 4rem;
+    }
 
-        .input-box input:focus {
-            border-color: #1877f2;
-        }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.25rem;
+      background: rgba(147, 51, 234, 0.08);
+      border: 1px solid rgba(147, 51, 234, 0.3);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      color: #d8b4fe;
+      margin-bottom: 1.75rem;
+      font-weight: 500;
+    }
 
-        .forgot {
-            text-align: right;
-            margin-bottom: 20px;
-        }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    }
 
-        .forgot a {
-            color: #1877f2;
-            text-decoration: none;
-            font-size: 14px;
-        }
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      letter-spacing: -1px;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            background: #1877f2;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    h1 span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        button:hover {
-            background: #0d65d9;
-        }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
 
-        .signup {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
 
-        .signup a {
-            color: #1877f2;
-            text-decoration: none;
-        }
-    </style>
+    .btn {
+      padding: 0.85rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 25px rgba(147, 51, 234, 0.4);
+    }
+
+    .btn-outline {
+      background: var(--card-bg);
+      color: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-align: center;
+    }
+
+    .stat-card h3 {
+      font-size: 2.25rem;
+      font-weight: 900;
+      margin-bottom: 0.25rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .about-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-box h4 {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .about-text {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      background: #14141c;
+      color: #e9d5ff;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-weight: 500;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .work-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .work-card h3 {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .work-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: #08080a;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.75rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-    <div class="login-box">
-        <h2>Login</h2>
+    <nav>
+      <div class="nav-logo">Segni Lemi</div>
+    </nav>
 
-        <form>
-            <div class="input-box">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
+    <header class="hero">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Available for Freelance & Remote Contracts
+      </div>
 
-            <div class="input-box">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
+      <h1>Segni <span>Lemi</span></h1>
 
-            <div class="forgot">
-                <a href="#">Forgot Password?</a>
-            </div>
+      <p class="hero-subtitle">
+        Digital Media Specialist & Content Creator crafting high-retention
+        short-form videos, engaging copy, and optimized digital growth strategies.
+      </p>
 
-            <button type="submit">Login</button>
+      <div class="hero-btns">
+        <a href="mailto:segnilemi029@gmail.com" class="btn btn-primary">
+          ✉️ Hire For Project
+        </a>
 
-            <div class="signup">
-                Don't have an account?
-                <a href="#">Sign Up</a>
-            </div>
+        <a href="#work" class="btn btn-outline">
+          View Work Samples &rarr;
+        </a>
+      </div>
+    </header>
+
+    <section style="border-top: none; padding-top: 0;">
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Accuracy & Quality</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Multi-Skill</h3>
+          <p>Video, SEO & Marketing</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 style="background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            SEO-Optimized
+          </h3>
+          <p>Copy & Content Strategy</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            24/7
+          </h3>
+          <p>Global Remote Availability</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-box">
+        <h4>— Segni Lemi</h4>
+
+        <p style="color: #c084fc; font-weight: 600; margin-bottom: 1.5rem;">
+          Computer Science Graduate (Jimma University) & Digital Media Specialist
+        </p>
+
+        <div class="about-text">
+          I am a Computer Science graduate from Jimma University with a strong
+          passion for digital storytelling, search engine optimization, and brand growth.
+        </div>
+
+        <div class="about-text">
+          By combining technical organization with professional video editing,
+          digital marketing, and persuasive copywriting, I help creators and
+          businesses build strong online presences that convert audiences.
+        </div>
+
+        <div class="skills-tags">
+          <span class="skill-tag">#VideoEditing</span>
+          <span class="skill-tag">#DigitalMarketing</span>
+          <span class="skill-tag">#ContentWriting</span>
+          <span class="skill-tag">#SEO</span>
+          <span class="skill-tag">#VirtualAssistant</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2 class="section-title">Sample of My Work</h2>
+
+      <div class="work-grid">
+
+        <div class="work-card">
+          <h3>🎬 Short-Form Video Editing</h3>
+          <p>
+            Editing viral vertical videos for TikTok, Instagram Reels, and
+            YouTube Shorts with dynamic hooks and captions.
+          </p>
+          <div class="skills-tags">
+            <span class="skill-tag">CapCut</span>
+            <span class="skill-tag">Reels</span>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <h3>📈 Digital Marketing & SEO</h3>
+          <p>
+            Executing content calendars, organic social media growth strategies,
+            and keyword optimization to improve search visibility.
+          </p>
+          <div class="skills-tags">
+            <span class="skill-tag">SEO Strategy</span>
+            <span class="skill-tag">Growth</span>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <h3>✍️ Content & Copywriting</h3>
+          <p>
+            Writing persuasive blog posts, direct-response ad scripts, and
+            human-crafted copy that speaks directly to audiences.
+          </p>
+          <div class="skills-tags">
+            <span class="skill-tag">Copywriting</span>
+            <span class="skill-tag">Blog Posts</span>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <h3>💼 Virtual Assistant</h3>
+          <p>
+            Providing reliable remote support including inbox management,
+            scheduling, data entry, and spreadsheet reconciliation.
+          </p>
+          <div class="skills-tags">
+            <span class="skill-tag">Google Workspace</span>
+            <span class="skill-tag">Data Entry</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Let's Build Something Great</h2>
+
+      <div class="contact-card">
+        <form action="mailto:segnilemi029@gmail.com" method="post" enctype="text/plain">
+
+          <div class="form-group">
+            <label>Your Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder="John Doe"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Your Email</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder="john@example.com"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Project Description</label>
+            <textarea
+              class="form-control"
+              name="message"
+              placeholder="Tell me about your project..."
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 100%; justify-content: center; cursor: pointer; border: none;"
+          >
+            Send Message
+          </button>
+
         </form>
-    </div>
+      </div>
+    </section>
 
+    <footer>
+      <p>&copy; 2026 Segni Lemi. Designed with precision.</p>
+    </footer>
+
+  </div>
 </body>
 </html>
