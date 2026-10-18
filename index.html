@@ -1,507 +1,533 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segni Lemi - Digital Media Specialist</title>
-
-  <style>
-    :root {
-      --bg: #030305;
-      --card-bg: #0d0d12;
-      --accent: #9333ea;
-      --accent-gradient: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
-      --text: #f4f4f5;
-      --text-muted: #a1a1aa;
-      --border: #1e1e24;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      padding: 0 1.25rem 6rem;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
-    }
-
-    .nav-logo {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #fff;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3rem 0 4rem;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1.25rem;
-      background: rgba(147, 51, 234, 0.08);
-      border: 1px solid rgba(147, 51, 234, 0.3);
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      color: #d8b4fe;
-      margin-bottom: 1.75rem;
-      font-weight: 500;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #22c55e;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 1.25rem;
-      letter-spacing: -1px;
-    }
-
-    h1 span {
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 650px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.7;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-
-    .btn {
-      padding: 0.85rem 2rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 4px 25px rgba(147, 51, 234, 0.4);
-    }
-
-    .btn-outline {
-      background: var(--card-bg);
-      color: #fff;
-      border: 1px solid var(--border);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 4rem;
-    }
-
-    .stat-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      text-align: center;
-    }
-
-    .stat-card h3 {
-      font-size: 2.25rem;
-      font-weight: 900;
-      margin-bottom: 0.25rem;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .stat-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    section {
-      padding: 3rem 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: #fff;
-    }
-
-    .about-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .about-box h4 {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .about-text {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .skills-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .skill-tag {
-      background: #14141c;
-      color: #e9d5ff;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.85rem;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      font-weight: 500;
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .work-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-    }
-
-    .work-card h3 {
-      font-size: 1.25rem;
-      color: #fff;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-
-    .work-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .contact-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      background: #08080a;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-      font-family: inherit;
-    }
-
-    textarea.form-control {
-      resize: vertical;
-      min-height: 130px;
-    }
-
-    footer {
-      text-align: center;
-      padding-top: 4rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border);
-      margin-top: 4rem;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.75rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segni Lemi — Digital Marketing, Content Specialist &amp; Virtual Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <style>
+        body { background-color: #040507; color: #f3f4f6; font-family: sans-serif; }
+        .card-dark { background: #0c0e14; border: 1px solid rgba(255, 255, 255, 0.07); }
+        .card-dark:hover { border-color: rgba(168, 85, 247, 0.4); }
+        .amber-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pink-gradient-text {
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tiktok-embed {
+            margin: 0 auto !important;
+            border-radius: 12px !important;
+        }
+    </style>
 </head>
+<body class="selection:bg-purple-500 selection:text-white">
 
-<body>
-  <div class="container">
-
-    <nav>
-      <div class="nav-logo">Segni Lemi</div>
-    </nav>
-
-    <header class="hero">
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        Available for Freelance & Remote Contracts
-      </div>
-
-      <h1>Segni <span>Lemi</span></h1>
-
-      <p class="hero-subtitle">
-        Digital Media Specialist & Content Creator crafting high-retention
-        short-form videos, engaging copy, and optimized digital growth strategies.
-      </p>
-
-      <div class="hero-btns">
-        <a href="mailto:segnilemi029@gmail.com" class="btn btn-primary">
-          ✉️ Hire For Project
-        </a>
-
-        <a href="#work" class="btn btn-outline">
-          View Work Samples &rarr;
-        </a>
-      </div>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/80 border-b border-white/5 h-16 flex items-center justify-between px-6">
+        <span class="text-xl font-extrabold text-white">Segni <span class="text-purple-400">Lemi</span></span>
+        <div class="flex items-center gap-4">
+            <a href="#contact" class="px-4 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition">Hire Me</a>
+            <a href="#services" class="text-gray-400 hover:text-white text-xs">Services</a>
+            <a href="#showcase" class="text-gray-400 hover:text-white text-xs">Media</a>
+            <a href="#blog-portfolio" class="text-gray-400 hover:text-white text-xs">Blog</a>
+            <a href="#tools" class="text-gray-400 hover:text-white text-xs">Tools</a>
+        </div>
     </header>
 
-    <section style="border-top: none; padding-top: 0;">
-      <div class="stats-grid">
-
-        <div class="stat-card">
-          <h3>100%</h3>
-          <p>Accuracy & Quality</p>
+    <!-- 1. DETAILED ABOUT SECTION (Graduate Profile) -->
+    <section class="pt-28 pb-14 px-6 max-w-xl mx-auto space-y-6">
+        <h1 class="text-3xl font-extrabold text-amber-400">Hello, I'm Segni Lemi</h1>
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-dark-800 border border-white/10 text-xs text-gray-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for Remote Contracts &amp; Freelance Gigs
         </div>
 
-        <div class="stat-card">
-          <h3>Multi-Skill</h3>
-          <p>Video, SEO & Marketing</p>
+        <div class="space-y-4 text-sm text-gray-300 leading-relaxed">
+            <p>
+                I am a <strong class="text-white">3rd-year Computer Science student at Jimma University</strong> with technical expertise, combining structured analytical thinking with high-converting creative media and digital operations.
+            </p>
+            <p>
+                I specialize in <strong class="text-purple-300">Short-Form Video Editing</strong>, organic <strong class="text-pink-300">SEO Strategy</strong>, high-converting <strong class="text-amber-300">Content Writing &amp; Copywriting</strong>, and multi-channel <strong class="text-emerald-300">Digital Marketing</strong>.
+            </p>
+            <p>
+                As a detail-oriented <strong class="text-blue-300">Virtual Assistant</strong>, I help founders and business leaders handle spreadsheet operations, research, inbox workflows, and digital marketing funnels with consistency and speed.
+            </p>
         </div>
 
-        <div class="stat-card">
-          <h3 style="background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            SEO-Optimized
-          </h3>
-          <p>Copy & Content Strategy</p>
+        <!-- Live Blog Sample Button (Masked) -->
+        <div class="pt-1">
+            <a href="#blog-portfolio" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 hover:bg-amber-400/20 text-xs font-semibold transition">
+                <i class="fa-solid fa-newspaper"></i> Explore Published Blog &amp; Writing Portfolio
+            </a>
         </div>
 
-        <div class="stat-card">
-          <h3 style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            24/7
-          </h3>
-          <p>Global Remote Availability</p>
+        <div class="flex flex-wrap gap-3 pt-2">
+            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm shadow-lg shadow-purple-600/30 transition">
+                Hire For Project <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="#showcase" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-dark-800 border border-white/10 hover:bg-dark-700 text-white font-semibold text-sm transition">
+                View Media Samples <i class="fa-solid fa-play text-xs text-amber-400"></i>
+            </a>
         </div>
-
-      </div>
     </section>
 
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-
-      <div class="about-box">
-        <h4>— Segni Lemi</h4>
-
-        <p style="color: #c084fc; font-weight: 600; margin-bottom: 1.5rem;">
-          Computer Science Graduate (Jimma University) & Digital Media Specialist
-        </p>
-
-        <div class="about-text">
-          I am a Computer Science graduate from Jimma University with a strong
-          passion for digital storytelling, search engine optimization, and brand growth.
+    <!-- 2. SKILL PROFICIENCY BARS -->
+    <section class="py-12 border-t border-white/5 px-6 max-w-xl mx-auto space-y-5">
+        <div class="text-center space-y-1 mb-6">
+            <h2 class="text-xl font-bold text-white">Core Skills &amp; Proficiency</h2>
+            <p class="text-xs text-gray-400">Demonstrated performance across modern digital workflows.</p>
         </div>
 
-        <div class="about-text">
-          By combining technical organization with professional video editing,
-          digital marketing, and persuasive copywriting, I help creators and
-          businesses build strong online presences that convert audiences.
+        <!-- Skill 1 -->
+        <div class="card-dark p-4 rounded-2xl text-center space-y-3">
+            <i class="fa-solid fa-magnifying-glass-chart text-amber-400 text-lg"></i>
+            <h3 class="font-bold text-white text-sm">SEO &amp; Digital Marketing Strategy</h3>
+            <div class="w-full bg-gray-900 rounded-full h-2 overflow-hidden">
+                <div class="bg-amber-400 h-2 rounded-full" style="width: 90%"></div>
+            </div>
+            <p class="text-xs font-mono text-gray-400">90%</p>
         </div>
 
-        <div class="skills-tags">
-          <span class="skill-tag">#VideoEditing</span>
-          <span class="skill-tag">#DigitalMarketing</span>
-          <span class="skill-tag">#ContentWriting</span>
-          <span class="skill-tag">#SEO</span>
-          <span class="skill-tag">#VirtualAssistant</span>
+        <!-- Skill 2 -->
+        <div class="card-dark p-4 rounded-2xl text-center space-y-3">
+            <i class="fa-solid fa-film text-amber-400 text-lg"></i>
+            <h3 class="font-bold text-white text-sm">Short-Form Video Editing (TikTok, Reels, Shorts)</h3>
+            <div class="w-full bg-gray-900 rounded-full h-2 overflow-hidden">
+                <div class="bg-amber-400 h-2 rounded-full" style="width: 88%"></div>
+            </div>
+            <p class="text-xs font-mono text-gray-400">88%</p>
         </div>
-      </div>
+
+        <!-- Skill 3 -->
+        <div class="card-dark p-4 rounded-2xl text-center space-y-3">
+            <i class="fa-solid fa-pen-nib text-amber-400 text-lg"></i>
+            <h3 class="font-bold text-white text-sm">Content Writing &amp; Copywriting</h3>
+            <div class="w-full bg-gray-900 rounded-full h-2 overflow-hidden">
+                <div class="bg-amber-400 h-2 rounded-full" style="width: 94%"></div>
+            </div>
+            <p class="text-xs font-mono text-gray-400">94%</p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="card-dark p-4 rounded-2xl text-center space-y-3">
+            <i class="fa-solid fa-headset text-amber-400 text-lg"></i>
+            <h3 class="font-bold text-white text-sm">Virtual Assistant &amp; Spreadsheets Data Ops</h3>
+            <div class="w-full bg-gray-900 rounded-full h-2 overflow-hidden">
+                <div class="bg-amber-400 h-2 rounded-full" style="width: 86%"></div>
+            </div>
+            <p class="text-xs font-mono text-gray-400">86%</p>
+        </div>
     </section>
 
-    <section id="work">
-      <h2 class="section-title">Sample of My Work</h2>
-
-      <div class="work-grid">
-
-        <div class="work-card">
-          <h3>🎬 Short-Form Video Editing</h3>
-          <p>
-            Editing viral vertical videos for TikTok, Instagram Reels, and
-            YouTube Shorts with dynamic hooks and captions.
-          </p>
-          <div class="skills-tags">
-            <span class="skill-tag">CapCut</span>
-            <span class="skill-tag">Reels</span>
-          </div>
+    <!-- 3. MODERN VIDEO & GRAPHICS SHOWCASE SECTION -->
+    <section id="showcase" class="py-12 border-t border-white/5 px-6 max-w-xl mx-auto space-y-8">
+        <div class="text-center space-y-2">
+            <h2 class="text-2xl sm:text-3xl font-black text-white">
+                Video Editing &amp; <span class="amber-gradient-text">Visual Showcase</span>
+            </h2>
+            <p class="text-xs text-gray-400">Directly hosted MP4 cuts, interactive embeds, and creative design samples.</p>
         </div>
 
-        <div class="work-card">
-          <h3>📈 Digital Marketing & SEO</h3>
-          <p>
-            Executing content calendars, organic social media growth strategies,
-            and keyword optimization to improve search visibility.
-          </p>
-          <div class="skills-tags">
-            <span class="skill-tag">SEO Strategy</span>
-            <span class="skill-tag">Growth</span>
-          </div>
+        <!-- 🎬 1. DIRECT HOSTED MP4 VIDEO (Uploads from your own GitHub repo) -->
+        <div class="card-dark rounded-2xl overflow-hidden shadow-2xl border border-purple-500/30">
+            <div class="p-3.5 bg-[#0f1118] border-b border-white/5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-file-video"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">Direct MP4 Video Upload</h4>
+                        <span class="text-[10px] text-emerald-400 font-mono">● Native Website Host</span>
+                    </div>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/20 font-semibold font-mono">MP4 HD</span>
+            </div>
+
+            <div class="p-4 space-y-3">
+                <div class="relative w-full rounded-xl overflow-hidden bg-black border border-white/10 flex items-center justify-center">
+                    <video controls playsinline preload="metadata" class="w-full max-h-[460px] object-contain rounded-xl">
+                        <source src="sample.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="flex items-center justify-between text-[11px] text-gray-400 pt-1">
+                    <span class="text-gray-300 font-medium">Original Cut · Zero Platform Ads · Smooth Play</span>
+                    <span class="text-purple-400 font-mono">100% In-Site</span>
+                </div>
+            </div>
         </div>
 
-        <div class="work-card">
-          <h3>✍️ Content & Copywriting</h3>
-          <p>
-            Writing persuasive blog posts, direct-response ad scripts, and
-            human-crafted copy that speaks directly to audiences.
-          </p>
-          <div class="skills-tags">
-            <span class="skill-tag">Copywriting</span>
-            <span class="skill-tag">Blog Posts</span>
-          </div>
+        <!-- 2. Modern Video Frame Card (YouTube Sample) -->
+        <div class="card-dark rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-3.5 bg-[#0f1118] border-b border-white/5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">Short-Form Reel &amp; TikTok Mastercut</h4>
+                        <span class="text-[10px] text-emerald-400 font-mono">● High-Retention Cut</span>
+                    </div>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/20 font-semibold">60 FPS</span>
+            </div>
+
+            <div class="p-4 space-y-3">
+                <div class="relative w-full rounded-xl overflow-hidden bg-black aspect-video border border-white/10 flex items-center justify-center">
+                    <iframe 
+                        class="w-full h-full" 
+                        src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1&amp;rel=0" 
+                        title="Short-Form Video Showcase" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="flex items-center justify-between text-[11px] text-gray-400 pt-1">
+                    <span class="text-gray-300 font-medium">Kinetic Captions · Pacing Interrupts · CapCut Pro</span>
+                    <span class="text-purple-400 font-mono">&gt;70% Watch Time</span>
+                </div>
+            </div>
         </div>
 
-        <div class="work-card">
-          <h3>💼 Virtual Assistant</h3>
-          <p>
-            Providing reliable remote support including inbox management,
-            scheduling, data entry, and spreadsheet reconciliation.
-          </p>
-          <div class="skills-tags">
-            <span class="skill-tag">Google Workspace</span>
-            <span class="skill-tag">Data Entry</span>
-          </div>
+        <!-- 3. IN-SITE TIKTOK VIDEO PLAYER -->
+        <div class="card-dark rounded-2xl overflow-hidden shadow-2xl border border-pink-500/30">
+            <div class="p-3.5 bg-[#0f1118] border-b border-white/5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-pink-500/20 text-pink-400 flex items-center justify-center text-xs">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">Live Short-Form TikTok Cut</h4>
+                        <span class="text-[10px] text-pink-400 font-mono">● On-Site Interactive Player</span>
+                    </div>
+                </div>
+                <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/30 font-semibold font-mono">9:16 Vertical</span>
+            </div>
+
+            <div class="p-4 space-y-3 flex flex-col items-center">
+                <div class="w-full flex justify-center overflow-hidden rounded-xl bg-black/60 p-1 border border-white/5">
+                    <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSgM26qcD/" data-video-id="" style="max-width: 100%; min-width: 280px; width: 330px;">
+                        <section>
+                            <a target="_blank" title="Segni Lemi Video" href="https://vt.tiktok.com/ZSgM26qcD/">Loading video sample directly on website...</a>
+                        </section>
+                    </blockquote>
+                </div>
+                <div class="w-full flex items-center justify-between text-[11px] text-gray-400 pt-1 border-t border-white/5">
+                    <span class="text-gray-300 font-medium">CapCut Mobile Pacing · Visual Effects</span>
+                    <span class="text-pink-400 font-mono">Watch In-Site</span>
+                </div>
+            </div>
         </div>
 
-      </div>
+        <!-- Graphics & Visual Design Samples -->
+        <div class="space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2">
+                    <i class="fa-solid fa-palette"></i> Graphics Design &amp; Content Assets
+                </h3>
+                <span class="text-[10px] text-gray-400 font-mono">Visual Stack</span>
+            </div>
+
+            <div class="space-y-3">
+                <div class="card-dark rounded-xl overflow-hidden border border-white/10">
+                    <img 
+                        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" 
+                        alt="High-CTR Thumbnails and Social Media Banners" 
+                        class="w-full h-40 object-cover">
+                    <div class="p-3 bg-[#0c0e14]">
+                        <h5 class="text-xs font-bold text-white">High-CTR YouTube Thumbnails &amp; Cover Graphics</h5>
+                        <p class="text-[11px] text-gray-400">High-contrast typography, bold focal framing, optimized for mobile screens.</p>
+                    </div>
+                </div>
+
+                <div class="card-dark rounded-xl overflow-hidden border border-white/10">
+                    <img 
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" 
+                        alt="Infographics and Slide Deck Visuals" 
+                        class="w-full h-40 object-cover">
+                    <div class="p-3 bg-[#0c0e14]">
+                        <h5 class="text-xs font-bold text-white">Infographics, Carousel Slides &amp; Data Decks</h5>
+                        <p class="text-[11px] text-gray-400">Educational carousel frameworks designed to maximize shares and engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Blog Showcase -->
+        <div id="blog-portfolio" class="pt-6 space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-bold text-pink-400 flex items-center gap-2">
+                    <i class="fa-solid fa-newspaper"></i> Featured Blog &amp; Content Writing Portfolio
+                </h3>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/20 font-semibold font-mono">Live Publication</span>
+            </div>
+
+            <div class="card-dark rounded-2xl overflow-hidden border border-pink-500/30 shadow-2xl group transition hover:border-pink-500/60">
+                <div class="p-3.5 bg-[#0f1118] border-b border-white/5 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                        <span class="text-xs font-mono text-gray-400 ml-2">segnifx.editorial.live</span>
+                    </div>
+                    <span class="text-[10px] text-pink-400 font-mono font-semibold flex items-center gap-1">
+                        <i class="fa-solid fa-check-circle text-emerald-400"></i> Human Written
+                    </span>
+                </div>
+
+                <a href="https://segnifx.blogspot.com/?m=1" target="_blank" rel="noopener noreferrer" class="block relative overflow-hidden group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" 
+                        alt="Segni Lemi Content &amp; Editorial Blog" 
+                        class="w-full h-52 sm:h-64 object-cover transform transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0c0e14] via-[#0c0e14]/50 to-transparent flex items-end p-5">
+                        <span class="px-3.5 py-1.5 rounded-xl bg-purple-600/90 text-white text-xs font-bold shadow-lg backdrop-blur-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Open SegniFX Blog
+                        </span>
+                    </div>
+                </a>
+
+                <div class="p-5 bg-[#0c0e14] space-y-4">
+                    <div class="space-y-1">
+                        <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-pink-300 transition">
+                            Editorial Articles, Search-Intent Guides &amp; Market Insights
+                        </h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            A curated collection of live published articles covering digital technology, financial insights, analytical guides, and engaging long-form copy optimized for high reader retention and organic search rank.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 text-[11px]">
+                        <span class="px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 text-gray-300">SEO Keyword Integration</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 text-gray-300">Compelling Storytelling</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 text-gray-300">Zero AI Fluff</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 text-pink-300">Live Domain</span>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://segnifx.blogspot.com/?m=1" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-pink-600/25 transition">
+
+                                                      <span>Browse Live Articles &amp; Blog Portfolio</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2 class="section-title">Let's Build Something Great</h2>
+    <!-- 4. TOOLS & SOFTWARE STACK -->
+    <section id="tools" class="py-12 border-t border-white/5 px-6 max-w-xl mx-auto space-y-6">
+        <div class="text-center space-y-1">
+            <h2 class="text-2xl font-bold text-purple-400">Tools &amp; Software Stack</h2>
+            <p class="text-xs text-gray-400">Industry-standard software I utilize for client deliverables.</p>
+        </div>
 
-      <div class="contact-card">
-        <form action="mailto:segnilemi029@gmail.com" method="post" enctype="text/plain">
+        <div class="card-dark p-5 rounded-2xl space-y-3">
+            <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2">
+                <i class="fa-solid fa-video"></i> Video Editing &amp; Design Tools
+            </h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">CapCut Pro</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Canva Pro</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Adobe Creative Cloud</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Adobe Premiere / Rush</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Photoshop</span>
+            </div>
+        </div>
 
-          <div class="form-group">
-            <label>Your Name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="name"
-              placeholder="John Doe"
-              required
-            >
-          </div>
+        <div class="card-dark p-5 rounded-2xl space-y-3">
+            <h3 class="text-sm font-bold text-pink-400 flex items-center gap-2">
+                <i class="fa-solid fa-file-excel"></i> Writing, Spreadsheets &amp; SEO Tools
+            </h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Google Sheets</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Microsoft Excel</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Google Docs &amp; Worksheets</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">SEO Keyword Research</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Notion Workspace</span>
+            </div>
+        </div>
+    </section>
 
-          <div class="form-group">
-            <label>Your Email</label>
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              placeholder="john@example.com"
-              required
-            >
-          </div>
+    <!-- 5. SERVICES MATRIX (8 Cards) -->
+    <section id="services" class="py-12 border-t border-white/5 px-6 max-w-xl mx-auto space-y-6">
+        <div class="space-y-1">
+            <h2 class="text-2xl font-bold text-white">My Services</h2>
+            <p class="text-xs text-gray-400">Complete digital content, marketing, and operational services.</p>
+        </div>
 
-          <div class="form-group">
-            <label>Project Description</label>
-            <textarea
-              class="form-control"
-              name="message"
-              placeholder="Tell me about your project..."
-              required
-            ></textarea>
-          </div>
+        <div class="grid grid-cols-2 gap-3">
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-magnifying-glass-chart text-amber-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">SEO Optimization</h4>
+                <p class="text-[10px] text-gray-400">On-page &amp; keyword rankings</p>
+            </div>
 
-          <button
-            type="submit"
-            class="btn btn-primary"
-            style="width: 100%; justify-content: center; cursor: pointer; border: none;"
-          >
-            Send Message
-          </button>
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-bullhorn text-emerald-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">Digital Marketing</h4>
+                <p class="text-[10px] text-gray-400">Campaigns &amp; lead acquisition</p>
+            </div>
 
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-video text-purple-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">Video Editing</h4>
+                <p class="text-[10px] text-gray-400">CapCut &amp; Adobe short-form</p>
+            </div>
+
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-pen-nib text-pink-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">Copywriting</h4>
+                <p class="text-[10px] text-gray-400">Conversion landing &amp; ad copy</p>
+            </div>
+
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-table-cells text-cyan-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">Excel &amp; Sheets Ops</h4>
+                <p class="text-[10px] text-gray-400">Data tracking &amp; worksheets</p>
+            </div>
+
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-headset text-blue-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">Virtual Assistant</h4>
+                <p class="text-[10px] text-gray-400">Inbox, schedules &amp; admin</p>
+            </div>
+
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-chart-line text-yellow-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">Social Growth</h4>
+                <p class="text-[10px] text-gray-400">Engagement &amp; viral pacing</p>
+            </div>
+
+            <div class="card-dark p-4 rounded-xl text-center space-y-2">
+                <i class="fa-solid fa-book text-indigo-400 text-lg"></i>
+                <h4 class="font-bold text-white text-xs">Creative Scripts</h4>
+                <p class="text-[10px] text-gray-400">Spoken word &amp; literature</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GET IN TOUCH & MASKED CONTACT CARDS -->
+    <section id="contact" class="py-12 border-t border-white/5 px-6 max-w-xl mx-auto space-y-6">
+        <div class="space-y-2 text-center">
+            <h2 class="text-3xl font-extrabold text-amber-400">Get In Touch</h2>
+            <p class="text-xs text-gray-400">Have a project, freelance task, or remote role? Connect with me directly.</p>
+        </div>
+
+        <div class="space-y-3">
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center text-amber-400 text-base">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">Email Address</h5>
+                    <a href="mailto:segnilemi029@gmail.com" class="text-white text-sm font-semibold hover:underline">segnilemi029@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-base">
+                    <i class="fa-brands fa-telegram"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">Telegram Direct Message</h5>
+                    <a href="https://t.me/ixiixa" target="_blank" rel="noopener noreferrer" class="text-purple-300 text-sm font-semibold hover:underline">
+                        Message Segni on Telegram <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-base">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">WhatsApp Chat</h5>
+                    <a href="https://wa.me/251939280306" target="_blank" rel="noopener noreferrer" class="text-emerald-300 text-sm font-semibold hover:underline">
+                        Chat on WhatsApp <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-base">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">Direct Phone Call</h5>
+                    <a href="tel:+251939280306" class="text-white text-sm font-semibold hover:underline">+251 939 280306</a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 text-base">
+                    <i class="fa-solid fa-newspaper"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">Content Writing &amp; Blog Portfolio</h5>
+                    <a href="https://segnifx.blogspot.com/?m=1" target="_blank" rel="noopener noreferrer" class="text-pink-300 text-sm font-semibold hover:underline">
+                        View Published Articles &amp; Writing Samples <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-base">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">Location &amp; Availability</h5>
+                    <p class="text-white text-sm font-semibold">Jimma, Ethiopia (Remote Worldwide)</p>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center justify-between">
+                <span class="text-xs text-gray-400">Connect On Socials:</span>
+                <div class="flex gap-4 text-base text-gray-300">
+                    <a href="https://t.me/ixiixa" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://wa.me/251939280306" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="mailto:segnilemi029@gmail.com" class="hover:text-amber-400" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Embedded Contact Form -->
+        <form action="mailto:segnilemi029@gmail.com" method="POST" enctype="text/plain" class="space-y-3 pt-4">
+            <div>
+                <label class="block text-xs text-gray-400 mb-1">Your Name</label>
+                <input type="text" name="name" required placeholder="John Doe" class="w-full bg-[#0c0e14] border border-white/10 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div>
+                <label class="block text-xs text-gray-400 mb-1">Your Email</label>
+                <input type="email" name="email" required placeholder="john@example.com" class="w-full bg-[#0c0e14] border border-white/10 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div>
+                <label class="block text-xs text-gray-400 mb-1">Project Needs (SEO, Video Editing, Writing, Spreadsheets, VA)</label>
+                <textarea name="message" rows="3" required placeholder="Describe your project or task..." class="w-full bg-[#0c0e14] border border-white/10 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-purple-500"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition shadow-lg shadow-purple-600/30">
+                Send Inquiry
+            </button>
         </form>
-      </div>
     </section>
 
-    <footer>
-      <p>&copy; 2026 Segni Lemi. Designed with precision.</p>
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5 text-center text-xs text-gray-500 space-y-1">
+        <p class="text-white font-semibold">Segni Lemi</p>
+        <p>3rd-year Computer Science Student · Jimma University · Digital Operations &amp; Media Specialist</p>
+        <p>&copy; 2026 Segni Lemi. All rights reserved.</p>
     </footer>
 
-  </div>
 </body>
 </html>
