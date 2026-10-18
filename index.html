@@ -41,7 +41,7 @@
         </div>
     </header>
 
-    <!-- 1. DETAILED ABOUT SECTION (Graduate Profile) -->
+    <!-- 1. DETAILED ABOUT SECTION -->
     <section class="pt-28 pb-14 px-6 max-w-xl mx-auto space-y-6">
         <h1 class="text-3xl font-extrabold text-amber-400">Hello, I'm Segni Lemi</h1>
         
@@ -61,7 +61,7 @@
             </p>
         </div>
 
-        <!-- Live Blog Sample Button (Masked) -->
+        <!-- Live Blog Sample Button -->
         <div class="pt-1">
             <a href="#blog-portfolio" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 hover:bg-amber-400/20 text-xs font-semibold transition">
                 <i class="fa-solid fa-newspaper"></i> Explore Published Blog &amp; Writing Portfolio
@@ -77,15 +77,13 @@
             </a>
         </div>
     </section>
-
-    <!-- 2. SKILL PROFICIENCY BARS -->
+     <!-- 2. SKILL PROFICIENCY BARS -->
     <section class="py-12 border-t border-white/5 px-6 max-w-xl mx-auto space-y-5">
         <div class="text-center space-y-1 mb-6">
             <h2 class="text-xl font-bold text-white">Core Skills &amp; Proficiency</h2>
             <p class="text-xs text-gray-400">Demonstrated performance across modern digital workflows.</p>
         </div>
 
-        <!-- Skill 1 -->
         <div class="card-dark p-4 rounded-2xl text-center space-y-3">
             <i class="fa-solid fa-magnifying-glass-chart text-amber-400 text-lg"></i>
             <h3 class="font-bold text-white text-sm">SEO &amp; Digital Marketing Strategy</h3>
@@ -95,7 +93,6 @@
             <p class="text-xs font-mono text-gray-400">90%</p>
         </div>
 
-        <!-- Skill 2 -->
         <div class="card-dark p-4 rounded-2xl text-center space-y-3">
             <i class="fa-solid fa-film text-amber-400 text-lg"></i>
             <h3 class="font-bold text-white text-sm">Short-Form Video Editing (TikTok, Reels, Shorts)</h3>
@@ -105,7 +102,6 @@
             <p class="text-xs font-mono text-gray-400">88%</p>
         </div>
 
-        <!-- Skill 3 -->
         <div class="card-dark p-4 rounded-2xl text-center space-y-3">
             <i class="fa-solid fa-pen-nib text-amber-400 text-lg"></i>
             <h3 class="font-bold text-white text-sm">Content Writing &amp; Copywriting</h3>
@@ -115,7 +111,6 @@
             <p class="text-xs font-mono text-gray-400">94%</p>
         </div>
 
-        <!-- Skill 4 -->
         <div class="card-dark p-4 rounded-2xl text-center space-y-3">
             <i class="fa-solid fa-headset text-amber-400 text-lg"></i>
             <h3 class="font-bold text-white text-sm">Virtual Assistant &amp; Spreadsheets Data Ops</h3>
@@ -132,10 +127,10 @@
             <h2 class="text-2xl sm:text-3xl font-black text-white">
                 Video Editing &amp; <span class="amber-gradient-text">Visual Showcase</span>
             </h2>
-            <p class="text-xs text-gray-400">Directly hosted MP4 cuts, interactive embeds, and creative design samples.</p>
+            <p class="text-xs text-gray-400">Directly hosted MP4 cuts, interactive embeds, and real graphic design samples.</p>
         </div>
 
-        <!-- 🎬 1. DIRECT HOSTED MP4 VIDEO (Uploads from your own GitHub repo) -->
+        <!-- 🎬 1. DIRECT HOSTED MP4 VIDEO -->
         <div class="card-dark rounded-2xl overflow-hidden shadow-2xl border border-purple-500/30">
             <div class="p-3.5 bg-[#0f1118] border-b border-white/5 flex items-center justify-between">
                 <div class="flex items-center gap-2">
@@ -143,7 +138,7 @@
                         <i class="fa-solid fa-file-video"></i>
                     </div>
                     <div>
-                        <h4 class="text-xs font-bold text-white">Direct MP4 Video Upload</h4>
+                        <h4 class="text-xs font-bold text-white">My Short Video Sample</h4>
                         <span class="text-[10px] text-emerald-400 font-mono">● Native Website Host</span>
                     </div>
                 </div>
@@ -151,21 +146,26 @@
             </div>
 
             <div class="p-4 space-y-3">
-                <div class="relative w-full rounded-xl overflow-hidden bg-black border border-white/10 flex items-center justify-center">
-                    <video controls playsinline preload="metadata" class="w-full max-h-[460px] object-contain rounded-xl">
-                        <source src="./sample.mp4" type="video/mp4">
-   
+                <div class="relative w-full rounded-xl overflow-hidden bg-black border border-white/10 flex items-center justify-center min-h-[240px]">
+                    <video 
+                        controls 
+                        playsinline 
+                        preload="auto" 
+                        class="w-full max-h-[460px] object-contain rounded-xl"
+                        src="short-video.mp4">
+                        <source src="short-video.mp4" type="video/mp4">
+                        <source src="https://raw.githubusercontent.com/segniHq/Segni-portfolio/main/sample.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="flex items-center justify-between text-[11px] text-gray-400 pt-1">
                     <span class="text-gray-300 font-medium">Original Cut · Zero Platform Ads · Smooth Play</span>
-                    <span class="text-purple-400 font-mono">100% In-Site</span>
+                    <a href="sample.mp4" target="_blank" class="text-purple-400 hover:underline font-mono text-[10px]">Open file directly ↗</a>
                 </div>
             </div>
         </div>
 
-        <!-- 2. Modern Video Frame Card (YouTube Sample) -->
+        <!-- 2. YouTube Sample -->
         <div class="card-dark rounded-2xl overflow-hidden shadow-2xl">
             <div class="p-3.5 bg-[#0f1118] border-b border-white/5 flex items-center justify-between">
                 <div class="flex items-center gap-2">
@@ -192,7 +192,7 @@
                     </iframe>
                 </div>
                 <div class="flex items-center justify-between text-[11px] text-gray-400 pt-1">
-                    <span class="text-gray-300 font-medium">Kinetic Captions · Pacing Interrupts · CapCut Pro</span>
+                    <span class="text-gray-300 font-medium">Kinetic Captions · Pacing Interrupts · CapCut</span>
                     <span class="text-purple-400 font-mono">&gt;70% Watch Time</span>
                 </div>
             </div>
@@ -228,35 +228,53 @@
             </div>
         </div>
 
-        <!-- Graphics & Visual Design Samples -->
+        <!-- 🎨 REAL GRAPHICS DESIGN SAMPLES (Updated with your original designs) -->
         <div class="space-y-4">
             <div class="flex items-center justify-between">
                 <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2">
                     <i class="fa-solid fa-palette"></i> Graphics Design &amp; Content Assets
                 </h3>
-                <span class="text-[10px] text-gray-400 font-mono">Visual Stack</span>
+                <span class="text-[10px] text-purple-400 font-mono">Original Work Samples</span>
             </div>
 
-            <div class="space-y-3">
-                <div class="card-dark rounded-xl overflow-hidden border border-white/10">
-                    <img 
-                        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" 
-                        alt="High-CTR Thumbnails and Social Media Banners" 
-                        class="w-full h-40 object-cover">
-                    <div class="p-3 bg-[#0c0e14]">
-                        <h5 class="text-xs font-bold text-white">High-CTR YouTube Thumbnails &amp; Cover Graphics</h5>
-                        <p class="text-[11px] text-gray-400">High-contrast typography, bold focal framing, optimized for mobile screens.</p>
+            <div class="space-y-4">
+                <!-- Real Sample 1: Skills & Capabilities Matrix -->
+                <div class="card-dark rounded-2xl overflow-hidden border border-purple-500/30 shadow-xl">
+                    <div class="w-full bg-[#05060a] p-1 border-b border-white/5">
+                        <img 
+                            src="graphic1.jpg" 
+                            onerror="this.onerror=null;this.src='https://unlimbot.hb.ru-msk.vkcloud-storage.ru/uploads/9dfb2f3e79544ae18dc0a8d8b0de450b62a5883e7573cef5.jpg';"
+                            alt="Social Media Management and Content Creation Skills Matrix" 
+                            class="w-full h-auto max-h-[380px] object-contain rounded-xl mx-auto block">
+                    </div>
+                    <div class="p-4 bg-[#0c0e14] space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h5 class="text-xs font-bold text-white">Social Media, Content &amp; Performance Matrix</h5>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-mono">Branding Design</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            Structured marketing asset detailing core proficiencies across social media management, content planning, analytics, and digital campaigns.
+                        </p>
                     </div>
                 </div>
 
-                <div class="card-dark rounded-xl overflow-hidden border border-white/10">
-                    <img 
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" 
-                        alt="Infographics and Slide Deck Visuals" 
-                        class="w-full h-40 object-cover">
-                    <div class="p-3 bg-[#0c0e14]">
-                        <h5 class="text-xs font-bold text-white">Infographics, Carousel Slides &amp; Data Decks</h5>
-                        <p class="text-[11px] text-gray-400">Educational carousel frameworks designed to maximize shares and engagement.</p>
+                <!-- Real Sample 2: Segni Go Agency Promo Poster -->
+                <div class="card-dark rounded-2xl overflow-hidden border border-emerald-500/30 shadow-xl">
+                    <div class="w-full bg-[#05060a] p-1 border-b border-white/5">
+                        <img 
+                            src="graphic2.jpg" 
+                            onerror="this.onerror=null;this.src='https://unlimbot.hb.ru-msk.vkcloud-storage.ru/uploads/efc17596f11946809d8f55e065fbce745f9895cdf4e2ea2a.jpg';"
+                            alt="Segni Go Expert Digital Services Promotional Poster" 
+                            class="w-full h-auto max-h-[440px] object-contain rounded-xl mx-auto block">
+                    </div>
+                    <div class="p-4 bg-[#0c0e14] space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h5 class="text-xs font-bold text-white">Segni Go — Expert Digital Services Promotional Flyer</h5>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">Social Ad Creative</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            High-conversion promotional poster designed for digital video production, visual storytelling, and multi-channel campaign marketing.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -301,7 +319,8 @@
                         <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-pink-300 transition">
                             Editorial Articles, Search-Intent Guides &amp; Market Insights
                         </h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">
+                        <p class="text-xs text-gray-400
+                          leading-relaxed">
                             A curated collection of live published articles covering digital technology, financial insights, analytical guides, and engaging long-form copy optimized for high reader retention and organic search rank.
                         </p>
                     </div>
@@ -315,8 +334,7 @@
 
                     <div class="pt-2">
                         <a href="https://segnifx.blogspot.com/?m=1" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-pink-600/25 transition">
-
-                                                      <span>Browse Live Articles &amp; Blog Portfolio</span>
+                            <span>Browse Live Articles &amp; Blog Portfolio</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
                     </div>
@@ -337,10 +355,10 @@
                 <i class="fa-solid fa-video"></i> Video Editing &amp; Design Tools
             </h3>
             <div class="flex flex-wrap gap-2 text-xs">
-                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">CapCut Pro</span>
-                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Canva Pro</span>
-                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Adobe Creative Cloud</span>
-                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Adobe Premiere / Rush</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">CapCut</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Canva</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">VN Video Editor</span>
+                <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Adobe</span>
                 <span class="px-3 py-1.5 bg-black/60 border border-white/10 rounded-lg text-gray-200">Photoshop</span>
             </div>
         </div>
@@ -482,6 +500,36 @@
             </div>
 
             <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-gray-500/10 flex items-center justify-center text-gray-200 text-base">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">X (Twitter)</h5>
+                    <a href="https://x.com/LemiSegni78625" target="_blank" rel="noopener noreferrer" class="text-white text-sm font-semibold hover:underline">View X Profile ↗</a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 text-base">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">Instagram</h5>
+                    <a href="https://www.instagram.com/segni.lemi/" target="_blank" rel="noopener noreferrer" class="text-white text-sm font-semibold hover:underline">View Instagram Profile ↗</a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-base">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+                <div>
+                    <h5 class="text-xs text-gray-400">LinkedIn</h5>
+                    <a href="https://www.linkedin.com/in/SegniLemi" target="_blank" rel="noopener noreferrer" class="text-white text-sm font-semibold hover:underline">View LinkedIn Profile ↗</a>
+                </div>
+            </div>
+
+            <div class="card-dark p-4 rounded-2xl flex items-center gap-4">
                 <div class="w-10 h-10 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-base">
                     <i class="fa-solid fa-location-dot"></i>
                 </div>
@@ -499,6 +547,9 @@
                     <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     <a href="mailto:segnilemi029@gmail.com" class="hover:text-amber-400" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://x.com/LemiSegni78625" target="_blank" rel="noopener noreferrer" class="hover:text-gray-100" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/segni.lemi/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/SegniLemi" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -531,4 +582,4 @@
     </footer>
 
 </body>
-</html>
+</html>  
